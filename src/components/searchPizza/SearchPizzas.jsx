@@ -3,7 +3,9 @@ import './searchPizza.scss'
 
 const SearchPizzas = () => {
   return (
-    <div>searchPizza</div>
+    <div>searchPizza
+      <p>develop</p>
+    </div>
   )
 }
 
