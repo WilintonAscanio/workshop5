@@ -24,12 +24,9 @@ const Router = () => {
           <Route path='searchPizza' element={<SearchPizzas />} />
 
           <Route path='pizzas' element={<Pizza />} />
-          
-
 
         </Route>
-
-
+        
         <Route path='infoPizza' element={<InfoPizza />} />
         <Route path='chart' element={<Chart />} />
         <Route path='animation' element={<Animation />} />
