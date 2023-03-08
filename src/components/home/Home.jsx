@@ -30,7 +30,7 @@ const Home = () => {
 
           </label>
           <button className='home__login__btn'>
-            <NavLink to='infoHome' className='home__login__btn__link'>Inicio de sesión</NavLink>
+            <NavLink to='infoHome/details' className='home__login__btn__link'>Inicio de sesión</NavLink>
           </button>
           <strong>Restablecer contraseña</strong>
         </form>
