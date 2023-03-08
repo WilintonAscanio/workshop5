@@ -25,8 +25,6 @@ const Router = () => {
 
           <Route path='pizzas' element={<Pizza />} />
 
-
-
         </Route>
         
         <Route path='infoPizza' element={<InfoPizza />} />
