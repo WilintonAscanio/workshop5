@@ -1,11 +1,105 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './searchPizza.scss'
+import search from '../../assets/search.svg'
+import logoBusqueda from '../../assets/logoBusqueda.png'
+import { Context } from '../infoHome/InfoHome'
+import { getPizzas } from '../../services/getPizzas'
+import { Carousel } from 'react-responsive-carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 
 const SearchPizzas = () => {
+  const [input, setInput] = useState('')
+  const [data, setData] = useState([])
+
+  const [pizzas, setPizzas] = useState({})
+
+
+  const inputValue = ({ target }) => {
+    setInput(target.value)
+    const arrayFiltered = data.filter(pizza => pizza.name.toLowerCase().includes(target.value.toLowerCase()))
+    setPizzas(arrayFiltered)
+   
+
+  }
+  useEffect(() => {
+
+    getPizzas()
+      .then((response) => {
+        setData(response)
+      })
+      .catch((error) => { console.log(error); })
+
+  }, [])
+
+
   return (
-    <div>searchPizza
-      <p>develop</p>
-    </div>
+    <article className='searchPizza'>
+      <label>
+        <input type="text" placeholder='Escriba el nombre de la pizza ' onChange={(e) => inputValue(e)} />
+        <img src={search} alt="search" />
+      </label>
+      <div className='searchPizza__empty'>
+        
+        {!input ?
+          <figure>
+            <img src={logoBusqueda} alt="busqueda" />
+            <small>Busca la Pizza que más te gusta</small>
+          </figure>
+          :
+          <div className='searchPizza__carousel'>
+            {pizzas.map((pizza, index) => (
+                <Carousel emulateTouch={true}
+                  showArrows={true}
+                  showStatus={false}
+                  showIndicators={true}
+                  showThumbs={false}
+                  width={"80%"}
+                  infiniteLoop={true}
+                  key={index} className='searchPizza__carousel__info'>
+                  <div style={{
+                    backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${pizza.img})`}}>
+                    <section>
+                      <small>{pizza.name}</small>
+                      <button>$ {pizza.price}</button>
+                    </section>
+
+                  </div>
+                  <div style={{
+                    backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${pizza.img2})`
+
+
+                  }}>
+                    <section>
+                      <small>{pizza.name}</small>
+                      <button>$ {pizza.price}</button>
+                    </section>
+
+                  </div>
+                  <div style={{
+                    backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${pizza.img3})`
+
+                  }}>
+                    <section>
+                      <small>{pizza.name}</small>
+                      <button>${pizza.price}</button>
+                    </section>
+
+                  </div>
+
+                </Carousel>
+
+            ))}
+
+          </div>
+         
+        }
+        {!pizzas & input ? <span>hola</span> : '' 
+
+        }
+
+      </div>
+    </article>
   )
 }
 
