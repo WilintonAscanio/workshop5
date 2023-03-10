@@ -41,7 +41,7 @@ const InfoHome = () => {
             <div>
               <NavLink to='/infoHome/details' style={{
                 textDecoration: 'none',
-                color: 'white',
+                color: 'black',
               }} >Home</NavLink>
               <p>¡Qué bueno verte Cris!</p>
             </div>
