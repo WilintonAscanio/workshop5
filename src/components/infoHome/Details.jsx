@@ -19,6 +19,19 @@ const Details = () => {
 
   }, [])
 
+<<<<<<< Updated upstream
+=======
+  const pizzaSelected = (id) => {
+    setId(id)
+    localStorage.setItem('id', JSON.stringify(id))
+    navigate('/infoPizza')
+
+    
+  }
+
+
+
+>>>>>>> Stashed changes
   return (
     <article className='details'>
       <div className='details__info'>

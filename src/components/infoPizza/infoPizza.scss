@@ -2,18 +2,19 @@ $color-primario: #f5efe3;
 $color-segundario: #f0942c;
 
 .infooPizza {
+  display: flex;
+  flex-direction: column;
   background-color: #fe174f;
-  padding: 0%;
-  margin: 0%;
   box-sizing: border-box;
   height: 100%;
   width: 100%;
-  margin-left: 20px;
-&__section{
-  display: flex;
-  flex-direction: column;
-  
-}
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+  }
+
   &__div {
     background-image: url(/assets/img_infopizza.png);
     background-repeat: no-repeat;
@@ -30,7 +31,7 @@ $color-segundario: #f0942c;
       height: 40px;
       display: flex;
       align-items: center;
-      font: size 18px;
+      // font: size 18px;
       text-decoration: none;
       color: $color-primario;
       cursor: pointer;
@@ -39,7 +40,7 @@ $color-segundario: #f0942c;
         scale: 0.99;
         transition: scale 0.5s;
       }
-      
+
     }
 
     &__puntos {
@@ -54,22 +55,22 @@ $color-segundario: #f0942c;
     height: 400px;
     border-radius: 0px 0px 20px 20px;
 
-   
+
 
     & H1 {
       color: $color-primario;
       font-size: 30px;
     }
-   
+
 
     &__reviews {
       display: flex;
       gap: 20px;
-      
-      
+
+
 
       & button {
-        
+
         border-radius: 20px;
         font-size: 15px;
         color: $color-primario;
@@ -78,14 +79,18 @@ $color-segundario: #f0942c;
         display: flex;
         align-items: center;
         justify-content: center;
+        border: none;
+        font-weight: bold;
 
-        
+
       }
-     &__btn{
+
+      &__btn {
         background-color: #fe174f;
-      
+
       }
-      &__btn2{
+
+      &__btn2 {
         background-color: #f0942c;
       }
 
@@ -97,16 +102,16 @@ $color-segundario: #f0942c;
         font-size: 12px;
       }
     }
-    
 
-    &__description {
-      color: $color-primario;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      margin-top: 5%;
+    & h3, p {
+      margin-top: 20px;
+      color: white;
     }
+
+
+
   }
+
   & footer {
     display: flex;
     padding: 20px;
@@ -146,10 +151,10 @@ $color-segundario: #f0942c;
   justify-content: center;
   cursor: pointer;
 
-      &:hover {
-        scale: 1.1;
-        transition: scale 0.8s;
-      }
+  &:hover {
+    scale: 1.1;
+    transition: scale 0.8s;
+  }
 }
 
 
@@ -165,36 +170,41 @@ $color-segundario: #f0942c;
 //     }
 
 //   }
-  
+
 // }
-@media (min-width: 900px){
+@media (min-width: 900px) {
 
-  .infooPizza{
+  .infooPizza {
     width: 100%;
-    height: 1000px; 
-   padding: 1%;
+    padding: 1%;
     display: flex;
+    flex-direction: row;
+    height: 100%;
 
-    &__section{
+    &__div{
+      background-color: red;
+      width: 400px;
+    }
+
+    &__section {
       display: flex;
       height: 1000%;
       flex-direction: row;
       gap: 10px;
-      height: 100%;      
+      height: 100%;
     }
 
-    &__master{
+    &__master {
       border-radius: none;
       height: 100%;
-      
+
     }
 
   }
-  
+
 }
 
 
 
 
 // flex-grow
-
