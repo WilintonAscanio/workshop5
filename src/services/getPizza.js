@@ -4,7 +4,7 @@ export const getPizza = async (id) => {
   try {
     const URL = 'http://localhost:3001/pizzas'
 
-    const { data } = await axios.get(`${URL}/?name=${id}`)
+    const { data } = await axios.get(`${URL}/?id=${id}`)
     return data
     
   } catch (error) {

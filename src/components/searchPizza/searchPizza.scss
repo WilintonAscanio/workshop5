@@ -23,7 +23,7 @@
 
     }
 
-    &__empty figure {
+    &__empty section {
         display: flex;
         flex-direction: column;
         height: 100vh;
@@ -44,62 +44,70 @@
     }
 
     &__carousel {
-        width: 1000px;
+        display: grid;
+        grid-template-columns: 49% 49%;
+        gap: 20px;
+        padding: 20px;
+        width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        margin-top: 10%;
-        margin-bottom: 10%;
+        margin-bottom: 15%;
 
-        &__info {
+
+
+        & figure {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
             display: flex;
+            justify-content: end;
+            align-items: start;
             flex-direction: column;
-            align-items: center;
-            margin-bottom: 10%;
+            border-radius: 15px;
+            height: 400px;
+            cursor: pointer;
 
+            & figcaption {
 
-
-            & div {
-                border-radius: 8px;
-                width: 100%;
-                height: 400px;
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
                 display: flex;
-                align-items: end;
-                
+                justify-content: space-between;
+                width: 100%;
+                height: 60px;
+                margin-bottom: 10%;
+                align-items: center;
+                padding: 10px;
 
-                & section{
-                    // background-color: blue;
-                    display: flex;
-                    width: 100%;
-                    justify-content: space-between;
-                    padding: 20px;
-                    align-items: center;
-                    font-size: 32px;
+                & p {
+
+                    font-weight: bold;
                     color: white;
+                    font-size: 20px;
+                    width: 30%;
 
-                    & button {
-                        width: 150px;
-                        height: 60px;
-                        border-radius: 5px;
-                        border: none;
-                        background-color: #f51a52;
-                        color: white;
-                        font-size: 25px;
+                }
+
+                & button {
+
+                    height: 60px;
+                    width: 150px;
+                    color: white;
+                    border: none;
+                    border-radius: 30px;
+                    background-color: #f51a52;
+                    font-size: 16px;
+                    cursor: pointer;
+
+                    & span {
                         font-weight: bold;
-                        cursor: pointer;
-
-                        &:hover{
-                            background-color: #8b0328;
-                            transition: background-color .5s;
-                        }
                     }
-                
+
+                    &:hover {
+                        background-color: #8b0328;
+                    }
                 }
             }
+
+
+
         }
 
     }
@@ -107,10 +115,32 @@
 
 }
 
-@media (max-width:850px){
-    .searchPizza__carousel{
-        background-color: rebeccapurple;
-        width: 600px;
+@media (max-width:850px) {
+    .searchPizza {
+        margin-bottom: 30%;
+        &__carousel {
+            grid-template-columns: 100%;
+            gap: 40px;
+
+            & figure {
+                height: 220px;
+
+                & figcaption {
+                    & p {
+                        font-size: 16px;
+
+                    }
+
+                    & button {
+                        width: 140px;
+                        height: 40px;
+                        font-size: 15px;
+
+                    }
+                }
+
+            }
+        }
     }
 
 }

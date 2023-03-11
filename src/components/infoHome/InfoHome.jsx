@@ -1,8 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { getPizzas } from '../../services/getPizzas'
 import './infoHome.scss'
-import profile from '../../assets/hombre.png'
 import search from '../../assets/search.svg'
 
 export const Context = createContext()
@@ -10,7 +9,10 @@ export const Context = createContext()
 
 const InfoHome = () => {
   const [data, setData] = useState([])
-  const [width, setWidth] = useState(window.innerWidth)
+  const [width, setWidth] = useState(window.innerWidth);
+  const [infoUser, setInfoUser] = useState([])
+
+  const navigate = useNavigate()
 
   const changeWidth = () => {
     setWidth(window.innerWidth)
@@ -20,15 +22,22 @@ const InfoHome = () => {
 
 
   useEffect(() => {
+    const info = JSON.parse(localStorage.getItem('user')) || []
+    setInfoUser(info)
 
     getPizzas()
       .then((response) => {
         setData(response)
-        console.log(response);
       })
       .catch((error) => { console.log(error); })
 
   }, [])
+
+  const logout = () => {
+    localStorage.removeItem('user')
+    navigate('/')
+
+  }
 
   if (width > 800) {
     return (
@@ -37,30 +46,38 @@ const InfoHome = () => {
         data
       }}>
         <article className='infoHome'>
-          <header className='infoHome__user'>
-            <div>
-              <NavLink to='/infoHome/details' style={{
-                textDecoration: 'none',
-                color: 'black',
-              }} >Home</NavLink>
-              <p>¡Qué bueno verte Cris!</p>
-            </div>
-            <div className='infoHome__user__search'>
-              <section className='search'>
-                <img src={search} alt="buscar" />
-                <NavLink to='searchPizza' style={{
-                  textDecoration: 'none',
-                  color: 'black',
-                }}>Buscar Pizza</NavLink>
-              </section>
-              <figure>
-                <img src={profile} alt="userPhoto" />
-              </figure>
+          {infoUser.map((element, index) => (
+            <header className='infoHome__user' key={index}>
+              <div>
+                <NavLink className='navlink' to='/infoHome/details'>
+                  <span className="material-symbols-outlined">
+                    house
+                  </span> Home</NavLink>
+                <p>¡Qué bueno verte <strong>{element.username.toUpperCase()}</strong>!</p>
+              </div>
+              <div className='infoHome__user__search'>
+                <section className='search'>
+                  <NavLink className='navlink' to='searchPizza'><img src={search} alt="buscar" /> Buscar Pizza</NavLink>
+                  <NavLink to='shopping' className='navlink'><span className="material-symbols-outlined">
+                    shopping_cart
+                  </span></NavLink>
+                  <small onClick={logout}><span className="material-symbols-outlined">
+                    logout
+                  </span> Salir</small>
 
 
-            </div>
 
-          </header>
+                </section>
+                <figure>
+                  <img src={element.img} alt="userPhoto" />
+                </figure>
+
+
+              </div>
+
+            </header>
+          ))}
+
 
           <Outlet />
 
@@ -80,15 +97,19 @@ const InfoHome = () => {
         data
       }}>
         <article className='infoHome'>
-          <header className='infoHome__user'>
-            <div>
-              <h3>Home</h3>
-              <p>¡Qué bueno verte Cris!</p>
-            </div>
-            <figure>
-              <img src={profile} alt="userPhoto" />
-            </figure>
-          </header>
+          {infoUser.map((element, index) => (
+            <header className='infoHome__user' key={index}>
+              <div>
+                <h3>Home</h3>
+                <p>¡Qué bueno verte <strong>{element.username.toUpperCase()}</strong>!</p>
+              </div>
+              <figure>
+                <img src={element.img} alt="userPhoto" />
+              </figure>
+            </header>
+
+          ))}
+
 
           <Outlet />
 
@@ -96,6 +117,9 @@ const InfoHome = () => {
             <NavLink to='/infoHome/details' className='infoHome__footer__buttons' ><span className="material-symbols-outlined">
               menu_book
             </span> Home</NavLink>
+            <NavLink to='chart' className='navlink'><span className="material-symbols-outlined">
+              shopping_cart
+            </span></NavLink>
             <NavLink to='searchPizza' className='infoHome__footer__buttons'><span className="material-symbols-outlined">
               search
             </span> Buscar</NavLink>

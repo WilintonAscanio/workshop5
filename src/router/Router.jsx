@@ -19,16 +19,21 @@ const Router = () => {
         <Route path='signUp' element={<SignUp />} />
         <Route path='infoHome' element={<InfoHome />}>
 
+          <Route path='chart' element={<Chart />} />
+
+
+
           <Route path="details" element={<Details />} />
 
           <Route path='searchPizza' element={<SearchPizzas />} />
 
-          <Route path='pizzas' element={<Pizza />} />
+
 
         </Route>
-        
-        <Route path='infoPizza' element={<InfoPizza />} />
-        <Route path='chart' element={<Chart />} />
+
+        <Route path='infoPizza' element={<InfoPizza />} >
+          <Route path=':pizzas' element={<Pizza />} />
+        </Route>
         <Route path='animation' element={<Animation />} />
 
       </Routes>

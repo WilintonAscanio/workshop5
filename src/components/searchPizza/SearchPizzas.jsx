@@ -19,7 +19,6 @@ const SearchPizzas = () => {
     setInput(target.value)
     const arrayFiltered = data.filter(pizza => pizza.name.toLowerCase().includes(target.value.toLowerCase()))
     setPizzas(arrayFiltered)
-   
 
   }
   useEffect(() => {
@@ -39,67 +38,63 @@ const SearchPizzas = () => {
         <input type="text" placeholder='Escriba el nombre de la pizza ' onChange={(e) => inputValue(e)} />
         <img src={search} alt="search" />
       </label>
-      <div className='searchPizza__empty'>
-        
-        {!input ?
-          <figure>
+      {!input ?
+        <div className='searchPizza__empty'>
+          <section>
             <img src={logoBusqueda} alt="busqueda" />
             <small>Busca la Pizza que más te gusta</small>
-          </figure>
-          :
-          <div className='searchPizza__carousel'>
-            {pizzas.map((pizza, index) => (
-                <Carousel emulateTouch={true}
-                  showArrows={true}
-                  showStatus={false}
-                  showIndicators={true}
-                  showThumbs={false}
-                  width={"80%"}
-                  infiniteLoop={true}
-                  key={index} className='searchPizza__carousel__info'>
-                  <div style={{
-                    backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${pizza.img})`}}>
-                    <section>
-                      <small>{pizza.name}</small>
-                      <button>$ {pizza.price}</button>
-                    </section>
+          </section>
+        </div> :
+      <div className='searchPizza__carousel'>
+        {pizzas.map((pizza, index) => (
+          <Carousel emulateTouch={true}
+            showArrows={true}
+            showStatus={false}
+            showIndicators={true}
+            showThumbs={false}
+            width={"100%"}
+            infiniteLoop={true}
+            key={index} className='searchPizza__carousel__info'>
+            <figure style={{
+              backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${pizza.img})`
+            }}>
+              <figcaption>
+                <p>{pizza.name}</p>
+                <button>$ {pizza.price}</button>
+              </figcaption>
 
-                  </div>
-                  <div style={{
-                    backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${pizza.img2})`
+            </figure>
+            <figure style={{
+              backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${pizza.img2})`
 
 
-                  }}>
-                    <section>
-                      <small>{pizza.name}</small>
-                      <button>$ {pizza.price}</button>
-                    </section>
+            }}>
+              <figcaption>
+                <p>{pizza.name}</p>
+                <button>$ {pizza.price}</button>
+              </figcaption>
 
-                  </div>
-                  <div style={{
-                    backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${pizza.img3})`
+            </figure>
+            <figure style={{
+              backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${pizza.img3})`
 
-                  }}>
-                    <section>
-                      <small>{pizza.name}</small>
-                      <button>${pizza.price}</button>
-                    </section>
+            }}>
+              <figcaption>
+                <p>{pizza.name}</p>
+                <button>${pizza.price}</button>
+              </figcaption>
 
-                  </div>
+            </figure>
 
-                </Carousel>
+          </Carousel>
 
-            ))}
-
-          </div>
-         
-        }
-        {!pizzas & input ? <span>hola</span> : '' 
-
-        }
+        ))}
 
       </div>
-    </article>
+         
+        }
+      
+    </article >
   )
 }
 

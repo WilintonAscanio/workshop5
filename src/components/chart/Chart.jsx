@@ -7,7 +7,7 @@ const Chart = () => {
       <article className="chart">
         <div className="chart__div">
             <NavLink className="chart__div__nav" to="/infoHome">
-            <span class="material-symbols-outlined">chevron_left</span>
+            <span className="material-symbols-outlined">chevron_left</span>
             Carrito de compras
           </NavLink>
           <figure> 

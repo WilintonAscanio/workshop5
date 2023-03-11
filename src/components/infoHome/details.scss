@@ -48,10 +48,12 @@
 
         &__pizzas {
             display: grid;
-            grid-template-columns: auto auto;
+            grid-template-columns: 49% 49%;
             gap: 20px;
             width: 100%;
             height: 100%;
+
+         
 
             & figure {
                 background-position: center;
@@ -81,6 +83,7 @@
                         color: white;
                         font-size: 20px;
                         width: 80%;
+                        display: flex;
 
                     }
 
@@ -123,11 +126,11 @@
         &__info {
 
             &__pizzas {
-                grid-template-columns: auto;
+                grid-template-columns: 100%;
                 gap: 40px;
 
                     & figure {
-                        height: 280px;
+                        height: 220px;
 
                         & figcaption {
                             & p {
