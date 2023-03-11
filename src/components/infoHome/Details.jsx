@@ -20,15 +20,14 @@ const Details = () => {
 
   }, [])
 
+
   const pizzaSelected = (id) => {
-    console.log(id);
     setId(id)
     localStorage.setItem('id', JSON.stringify(id))
     navigate('/infoPizza')
 
     
   }
-
 
 
   return (

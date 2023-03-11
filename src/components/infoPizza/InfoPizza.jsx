@@ -23,7 +23,6 @@ const InfoPizza = () => {
       {data.map((element, index) => (
         <article className="infooPizza" key={index}>
           <div className="infooPizza__div">
-            <h1>Hola</h1>
 
             <Carousel emulateTouch={true}
               showArrows={true}
@@ -55,9 +54,9 @@ const InfoPizza = () => {
           <div className="infooPizza__master">
             <h1>{element.name}</h1>
             <div className="infooPizza__master__reviews">
-              <button>${element.price}</button>
-              <button>
-                <span className="material-symbols-outlined">grade</span>{" "}
+              <button className='infooPizza__master__reviews__btn'>${element.price}</button>
+              <button className='infooPizza__master__reviews__btn2'>
+                <span className="material-symbols-outlined">grade</span>
                 <h6>{element.reviews} reviews</h6>
               </button>
             </div>
@@ -74,7 +73,7 @@ const InfoPizza = () => {
             <span className="material-symbols-outlined">shopping_cart</span>
 
             <button>
-              <NavLink to="/chart"> Pagar</NavLink>
+              <NavLink to="/chart" className='navlink'> Pagar</NavLink>
             </button>
           </footer>
         </article>
