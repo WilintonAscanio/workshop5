@@ -1,16 +1,9 @@
-<<<<<<< Updated upstream
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import './infoPizza.scss'
-=======
 import React, { useEffect, useState } from 'react'
 import { getPizza } from '../../services/getPizza'
 import { NavLink } from "react-router-dom";
 import "./infoPizza.scss";
-import imgopinion from "../../assets/img_opinion.png";
 import { Carousel } from 'react-responsive-carousel';
 
->>>>>>> Stashed changes
 
 const InfoPizza = () => {
   const [data, setData] = useState([])
@@ -25,15 +18,7 @@ const InfoPizza = () => {
   }, [])
 
   return (
-<<<<<<< Updated upstream
-    <div>InfoPizza
-      <NavLink to='/chart' > Pagar</NavLink>
-    </div>
-  )
-}
 
-export default InfoPizza
-=======
     <>
       {data.map((element, index) => (
         <article className="infooPizza" key={index}>
@@ -102,4 +87,3 @@ export default InfoPizza
 };
 
 export default InfoPizza;
->>>>>>> Stashed changes

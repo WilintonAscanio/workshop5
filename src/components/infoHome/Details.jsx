@@ -24,11 +24,7 @@ const Details = () => {
     console.log(id);
     setId(id)
     localStorage.setItem('id', JSON.stringify(id))
-<<<<<<< Updated upstream
     navigate('/infoPizza')
-=======
-    navigate(`/infoPizza/${id} `)
->>>>>>> Stashed changes
 
     
   }
