@@ -6,15 +6,16 @@ import passwordLogo from '../../assets/contraseña.png'
 import userLogo from '../../assets/usuario.png'
 import { useForm } from 'react-hook-form'
 import { getUsers } from '../../services/getUsers'
+import Swal from 'sweetalert2'
 
 
 const Home = () => {
   const navigate = useNavigate()
   const [users, setUsers] = useState([])
-  const [auth, setAuth] = useState(false)
 
 
   const { register, handleSubmit, formState: { errors } } = useForm()
+
 
   useEffect(() => {
     getUsers()
@@ -27,20 +28,21 @@ const Home = () => {
 
 
   const onSubmit = (data) => {
-    console.log(data);
+
     const userLogged = users.filter(user => user.username === data.username & user.password === data.password);
-    if (userLogged) {
-      setAuth(true) 
-    }
-    if (auth) {
+
+    if (userLogged.length) {
+      localStorage.setItem('user', JSON.stringify(userLogged))
       navigate('/infoHome/details')
 
     }
     else{
-      console.log('Naranjas');
+      Swal.fire({
+        icon:'info',
+        text: 'Compruebe sus credenciales'
+      })
+      navigate('/')
     }
-
-
   }
 
 
@@ -58,16 +60,22 @@ const Home = () => {
           <label>
             <img src={userLogo} alt="user" />
             <input type="text" placeholder='Usuario' {...register('username', {
-              required: true
+              required: 'Usuario incorrecto'
             })} />
           </label>
+          {errors.username && (
+            <span>{errors.username.message}</span>
+          )}
           <label>
             <img src={passwordLogo} alt="password" />
             <input type="password" placeholder='Contraseña' {...register('password', {
-              required: true
+              required: 'Contraseña incorrecta'
             })} />
-
+           
           </label>
+           {errors.username && (
+              <span>{errors.password.message}</span>
+            )}
           <button className='home__login__btn'>
             Iniciar Sesión
           </button>

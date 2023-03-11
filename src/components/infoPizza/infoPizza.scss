@@ -1,0 +1,97 @@
+<<<<<<< Updated upstream
+=======
+$color-primario: #f5efe3;
+$color-segundario: #f0942c;
+
+.infooPizza {
+  background-color: red;
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  height: 3000%;
+  width: 400px;
+  margin-left: 20px;
+
+  &__div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & figure {
+      width: 400px;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+    }
+
+    &__nav {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      font: size 18px;
+      text-decoration: none;
+      color: black;
+    }
+
+    &__puntos {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__master {
+    padding: 20px;
+    background-color: rgb(157, 105, 105);
+    height: 400px;
+
+    & H1 {
+      color: $color-primario;
+      font-size: 30px;
+    }
+
+    &__reviews {
+      display: flex;
+      gap: 20px;
+
+      & button {
+        background-color: $color-segundario;
+        border-radius: 20px;
+        font-size: 15px;
+        color: $color-primario;
+        width: 30%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      & span {
+
+
+        text-align: center;
+      }
+
+      & h6 {
+        font-size: 12px;
+      }
+
+
+    }
+  }
+
+  & footer {
+    display: flex;
+
+    padding: 20px;
+    justify-content: space-around;
+  }
+}
+
+//   cursor: pointer;
+
+//   &:hover {
+//       scale: 1.2;
+//       transition: scale .8s;
+>>>>>>> Stashed changes

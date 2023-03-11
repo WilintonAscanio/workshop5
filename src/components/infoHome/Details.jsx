@@ -11,7 +11,7 @@ const Details = () => {
   const [id, setId] = useState('')
   const navigate = useNavigate()
   useEffect(() => {
-
+    
     getPizzas()
       .then((response) => {
         setData(response)
@@ -24,7 +24,11 @@ const Details = () => {
     console.log(id);
     setId(id)
     localStorage.setItem('id', JSON.stringify(id))
+<<<<<<< Updated upstream
     navigate('/infoPizza')
+=======
+    navigate(`/infoPizza/${id} `)
+>>>>>>> Stashed changes
 
     
   }
@@ -59,9 +63,10 @@ const Details = () => {
                 showStatus={false}
                 showIndicators={true}
                 showThumbs={false}
-                width={"50%"}
+                width={"100%"}
                 infiniteLoop={true}
-                key={index}>
+                key={index}
+                className='details__info__pizzas__carousel'>
                 <figure key={index} style={{
                   backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${pizza.img})`
 
