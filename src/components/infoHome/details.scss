@@ -48,85 +48,70 @@
 
         &__pizzas {
             display: grid;
-            grid-template-columns: auto auto;
+            grid-template-columns: 49% 49%;
             gap: 20px;
             width: 100%;
             height: 100%;
 
-            & section {
-                background: rgb(0, 0, 0);
-                background: linear-gradient(0deg, rgba(0, 0, 0, 1) 35%, rgba(245, 245, 245, 1) 100%);
+         
+
+            & figure {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
                 display: flex;
-                justify-content: center;
-                align-items: center;
+                justify-content: end;
+                align-items: start;
                 flex-direction: column;
                 border-radius: 15px;
                 height: 400px;
                 cursor: pointer;
 
-                & figure {
-                    height: 300px;
+                & figcaption {
+
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    & img {
-                        object-fit: contain;
-                        height: 250px;
-                        width: 350px;
-                        opacity: .9;
-                    }
-
-                    &:hover {
-                        scale: 1.2;
-                        transition: scale .5s;
-                    }
-
-
-                }
-
-            }
-
-            & div {
-                color: white;
-                width: 100%;
-                padding: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                justify-content: space-between;
-                position: relative;
-                margin-bottom: 5%;
-
-                & p {
-
-                    font-weight: bold;
-                    font-size: 20px;
-                    width: 60%;
-                }
-
-                & button {
-
+                    justify-content: space-between;
+                    width: 100%;
                     height: 60px;
-                    width: 150px;
-                    color: white;
-                    border: none;
-                    border-radius: 30px;
-                    background-color: #f51a52;
-                    font-size: 16px;
-                    cursor: pointer;
+                    margin-bottom: 10%;
+                    align-items: center;
+                    padding: 10px;
 
-                    & span {
+                    & p {
+
                         font-weight: bold;
+                        color: white;
+                        font-size: 20px;
+                        width: 80%;
+                        display: flex;
+
                     }
 
-                    &:hover {
-                        background-color: #8b0328;
+                    & button {
+
+                        height: 60px;
+                        width: 150px;
+                        color: white;
+                        border: none;
+                        border-radius: 30px;
+                        background-color: #f51a52;
+                        font-size: 16px;
+                        cursor: pointer;
+
+                        & span {
+                            font-weight: bold;
+                        }
+
+                        &:hover {
+                            background-color: #8b0328;
+                        }
                     }
                 }
 
+        
 
             }
+
         }
 
     }
@@ -141,41 +126,35 @@
         &__info {
 
             &__pizzas {
-                grid-template-columns: auto;
+                grid-template-columns: 100%;
                 gap: 40px;
 
-                & section{
-                    height: 250px;
-
                     & figure {
-                        height: 150px;
-                        // background-color: red;
+                        height: 220px;
 
-                        & img {
-                            height: 100px;
-                            width: 150px;
-                            // background-color: blue;
+                        & figcaption {
+                            & p {
+                                font-size: 16px;
+            
+                            }
+            
+                            & button {
+                                width: 140px;
+                                font-size: 15px;
+            
+                            }
                         }
+
                     }
-                }
+                
             }
 
-            & div {
-
-                & p {
-                    font-size: 18px;
-
-                }
-
-                & button {
-                    width: 120px;
-
-                }
-            }
+         
         }
 
     }
-    .active{
+
+    .active {
         color: #b16c83;
     }
 

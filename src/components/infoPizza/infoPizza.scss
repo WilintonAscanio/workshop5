@@ -11,16 +11,18 @@ $color-segundario: #f0942c;
   margin-left: 20px;
 
   &__div {
-    background-image: url(/assets/img_infopizza.png);
-    background-repeat: no-repeat;
-    width: 400px;
-    height: 400px;
-    background-color: $color-segundario;
-    border-radius: 0px 0px 60px 60px;
     display: flex;
     flex-direction: column;
-
     justify-content: space-between;
+
+    & figure {
+      width: 400px;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+    }
 
     &__nav {
       height: 40px;
@@ -59,13 +61,13 @@ $color-segundario: #f0942c;
         width: 30%;
         height: 40px;
         display: flex;
-       align-items: center;
-       justify-content: center;
+        align-items: center;
+        justify-content: center;
       }
 
       & span {
-      
-        
+
+
         text-align: center;
       }
 
@@ -73,18 +75,20 @@ $color-segundario: #f0942c;
         font-size: 12px;
       }
 
-      
-      }
+
     }
-   & footer{
+  }
+
+  & footer {
     display: flex;
-    
+
     padding: 20px;
     justify-content: space-around;
-   }
   }
+}
+
 //   cursor: pointer;
-                
+
 //   &:hover {
 //       scale: 1.2;
 //       transition: scale .8s;
