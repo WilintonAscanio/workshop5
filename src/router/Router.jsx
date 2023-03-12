@@ -11,7 +11,7 @@ import Animation from "../components/animation/Animation";
 import Details from "../components/infoHome/Details";
 
 
-const Router = () => {
+function Router() {
   return (
     <BrowserRouter>
       <Routes>
@@ -31,7 +31,7 @@ const Router = () => {
 
         </Route>
 
-        <Route path='infoPizza' element={<InfoPizza />} >
+        <Route path='infoPizza' element={<InfoPizza />}>
           <Route path=':pizzas' element={<Pizza />} />
         </Route>
         <Route path='animation' element={<Animation />} />
@@ -39,6 +39,6 @@ const Router = () => {
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default Router;

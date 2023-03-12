@@ -25,6 +25,7 @@ const InfoPizza = () => {
           <div className="infooPizza__div">
 
             <Carousel emulateTouch={true}
+            
               showArrows={true}
               showStatus={false}
               showIndicators={true}
@@ -32,7 +33,12 @@ const InfoPizza = () => {
               width={"100%"}
               infiniteLoop={true}
               key={index}>
-              <figure style={{
+        <NavLink className='infooPizza__div__navclass' to='/infoHome'>
+            <span class="material-symbols-outlined">
+arrow_back_ios
+</span>Todas las pizzas
+</NavLink>
+              <figure className='infooPizza__div__figura' style={{
                 backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${element.img})`
               }}>
 
@@ -49,6 +55,7 @@ const InfoPizza = () => {
               </figure>
 
             </Carousel>
+
           </div>
 
           <div className="infooPizza__master">
@@ -86,3 +93,46 @@ const InfoPizza = () => {
 };
 
 export default InfoPizza;
+
+
+
+
+
+
+//  const Cart = () => {
+//    const [cartItems, setCartItems] = useState([]);
+
+//    const addToCart = (product) => {
+//      setCartItems([...cartItems, product]);
+//    };
+
+//    const removeFromCart = (product) => {
+//      const updatedCartItems = cartItems.filter((item) => item.id !== product.id);
+//      setCartItems(updatedCartItems);
+//    };
+
+//   const calculateTotal = () => {
+//     return cartItems.reduce((total, item) => total + item.price, 0);
+//   };
+
+//   return (
+//     <div>
+//       <h2>Cart</h2>
+//       {cartItems.length === 0 ? (
+//         <p>Your cart is empty.</p>
+//       ) : (
+//         <div>
+//           {cartItems.map((item) => (
+//             <div key={item.id}>
+//               <p>{item.name} - ${item.price}</p>
+//               <button onClick={() => removeFromCart(item)}>Remove</button>
+//             </div>
+//           ))}
+//           <p>Total: ${calculateTotal()}</p>
+//         </div>
+//       )}
+//     </div>
+//   );
+//  };
+
+//  export default Cart;

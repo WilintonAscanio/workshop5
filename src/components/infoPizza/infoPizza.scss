@@ -4,7 +4,7 @@ $color-segundario: #f0942c;
 .infooPizza {
   display: flex;
   flex-direction: column;
-  background-color: #fe174f;
+  background-color: #171bfe;
   box-sizing: border-box;
   height: 100%;
   width: 100%;
@@ -26,7 +26,14 @@ $color-segundario: #f0942c;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-
+     
+     
+      
+    }
+    
+    &__navclass{
+      text-decoration: none; 
+      justify-content:start ; 
     }
 
     &__nav {
@@ -118,6 +125,7 @@ $color-segundario: #f0942c;
     display: flex;
     padding: 20px;
     justify-content: space-around;
+    background-color: #fe174f;
 
     & span,
     button,
@@ -160,53 +168,29 @@ $color-segundario: #f0942c;
 }
 
 
-// @media (min-width : 768px) {
-//   .infooPizza{
-//     width: 100%;
-//     height:100% ;
-//    padding: 1%;
-//     display: flex;
+@media (min-width: 376px){
+  
+  
+  .infooPizza{
+   width: 100%;
+   height:100% ;
+   display: flex;
 
-//     &__master{
-//       border-radius: none;
-//     }
-
-//   }
-
-// }
-@media (min-width: 900px) {
-
-  .infooPizza {
-    width: 100%;
-    padding: 1%;
+   
+   &__div {
+   
     display: flex;
-    flex-direction: row;
-    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
 
-    &__div{
-      background-color: red;
+    & figure {
       width: 400px;
-    }
-
-    &__section {
-      display: flex;
-      height: 1000%;
-      flex-direction: row;
-      gap: 10px;
-      height: 100%;
-    }
-
-    &__master {
-      border-radius: none;
-      height: 100%;
-
-    }
-
+      height: 400px;
+      
+    
+     
   }
-
 }
 
-
-
-
-// flex-grow
+  }
+}
