@@ -1,77 +1,144 @@
 .chart {
-    height: 100vh;
-   width: 100%;
-   display: flex;
-   align-items:center ;
-   justify-content: center;
-   flex-direction: column;
-   
-
-   &__div {
-       background-color: #fef0ef;
-       padding: 20px 10px;
-       border-radius: 8px;
-       height: 80%;
-
-       & figure {
-           display: flex;
-           height: 80px;
-           background-color: white;
-           
-           & div {
-               background-image: url("https://i.ibb.co/xX8ZnBd/peperoni.png") ;
-               width: 100px;
-              
-               background-size: cover;
-               border-radius: 8px;
-               border: 2px solid grey ;
-           }
-
-           & section {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 100%;
-
-            & strong {
-            display: flex;
-            justify-content: space-between;
-
-            }
-
-           }
-       }   
-
-       &__nav {
-           display: flex;
-           align-items: center;
-           color:black;
-           text-decoration: none;
-           width: 55%;
-           font-size: 20px;
-           gap:5px;
-           margin-bottom: 3%;
-           font-weight: bold;
-           
-       }
-   
-       & form {
-       display:flex;
-       flex-direction: column;
-       gap:20px;
-   
-       & section {
-           display: flex;
-           gap: 20px;
-       }
-   
-       & label {
-           display: flex;
-           flex-direction: column;
-       }
-   }
-   }
-
+    min-height: 100vh;
+    background-image: url(https://images.hola.com/imagenes/cocina/recetas/20220208204252/pizza-pepperoni-mozzarella/1-48-890/pepperoni-pizza-abob-t.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 20px 14px;
   
-   
-}
+    &__container {
+      width: 100%;
+      max-width: 480px;
+      margin: 50px auto 30px;
+      display: grid;
+      justify-content: center;
+      row-gap: 30px;
+    }
+  
+    &__btn {
+      display: block;
+      width: 150px;
+      padding: 4px 10px;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 15px;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 400ms ease;
+  
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  
+    .product {
+      padding: 24px 20px;
+      background-color: #cccccce4;
+      color: black;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+  
+      &__img {
+        display: block;
+        object-fit: cover;
+      }
+  
+      &-content {
+        display: grid;
+        row-gap: 30px;
+  
+        &__title {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+  
+        &__details {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+  
+          strong {
+            display: block;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  
+    .form {
+      width: 100%;
+      padding: 28px 22px;
+      background-color: rgba(0.5, 0.5, 0.5, 0.7);
+      margin: auto;
+      color: white;
+      display: grid;
+      row-gap: 20px;
+      border-radius: 10px;
+  
+      &__title {
+        font-size: 1.1rem;
+      }
+  
+      &-content {
+        display: grid;
+        row-gap: 18px;
+        margin-bottom: 20px;
+  
+        .input-container {
+          &__label {
+            display: block;
+            margin-bottom: 5px;
+          }
+  
+          &__input {
+            padding: 10px 8px;
+            width: 100%;
+            border-radius: 3px;
+            border: none;
+  
+            &-error {
+              border: 1px solid rgb(182, 5, 5);
+  
+              &::placeholder {
+                color: rgb(182, 5, 5);
+              }
+            }
+          }
+        }
+  
+        &__double {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 20px;
+          align-items: center;
+        }
+      }
+  
+      &-btn {
+        width: 200px;
+        margin: auto;
+        border: none;
+        padding: 10px;
+        border-radius: 3px;
+        background-color: rgb(59 123 20);
+        color: white;
+        font-weight: bold;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background-color 400ms ease;
+  
+        &:hover {
+          color: rgb(59 123 20);
+          background-color: white;
+        }
+      }
+    }
+  }
+  
