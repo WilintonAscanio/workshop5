@@ -160,7 +160,11 @@ const Chart = () => {
           </div>
 
           <button className='form-btn' type='submit'>
-            Pagar ahora 
+          <Link to='/Animation' >
+                  
+          Pagar ahora
+        </Link>
+            
             
           </button>
         </form>
