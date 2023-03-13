@@ -1,0 +1,85 @@
+.signUp {
+    background-image: url(https://images.hola.com/imagenes/cocina/recetas/20220208204252/pizza-pepperoni-mozzarella/1-48-890/pepperoni-pizza-abob-t.jpg);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & div {
+        color: white;
+        background-color: rgba(0.5, 0.5, 0.5, 0.7);
+        height: 550px;
+        width: 380px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        padding: 10px 20px;
+
+
+        & form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+
+            & label {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                height: 30px;
+                color: rgb(231, 247, 18);
+                border-bottom: 1px solid gray;
+
+
+
+
+                & input {
+                    width: 100%;
+                    height: 100%;
+                    color: white;
+                    border: none;
+                    background-color: transparent;
+                    outline: none;
+
+                    &::placeholder {
+                        color: white;
+                    }
+                }
+            }
+
+            & span {
+                font-size: 14px;
+                color: red;
+            }
+
+
+        }
+
+        & button {
+            width: 100%;
+            margin-top: 10px;
+            height: 40px;
+            border: none;
+            text-decoration: none;
+            border-radius: 8px;
+            cursor: pointer;
+
+
+            &:hover {
+                background-color: black;
+                color: white;
+            }
+        }
+
+
+
+
+
+    }
+}

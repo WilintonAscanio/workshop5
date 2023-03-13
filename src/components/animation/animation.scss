@@ -1,0 +1,63 @@
+.checkout {
+    min-height: 100vh;
+    background-image: url(https://images.hola.com/imagenes/cocina/recetas/20220208204252/pizza-pepperoni-mozzarella/1-48-890/pepperoni-pizza-abob-t.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 20px 14px;
+  
+    .check-icon {
+      margin: auto;
+    }
+  
+    &__content {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      margin: 50px auto 30px;
+      padding: 100px 20px;
+      display: grid;
+      justify-content: center;
+      row-gap: 30px;
+      border-radius: 10px;
+      background-color: rgba(0.5, 0.5, 0.5, 0.7);
+      color: white;
+    }
+  
+    &-details {
+      margin-bottom: 50px;
+  
+      &__title {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+      }
+  
+      &__description {
+        font-size: 1.1rem;
+      }
+  
+      &__btn {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        margin: auto;
+        border: none;
+        padding: 10px;
+        border-radius: 3px;
+        background-color: rgb(59 123 20);
+        color: white;
+        font-weight: bold;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background-color 400ms ease;
+  
+        &:hover {
+          color: rgb(59 123 20);
+          background-color: white;
+        }
+      }
+    }
+  }
+ 
+  

@@ -25,6 +25,7 @@ const InfoHome = () => {
     const info = JSON.parse(localStorage.getItem('user')) || []
     setInfoUser(info)
 
+
     getPizzas()
       .then((response) => {
         setData(response)
@@ -35,6 +36,7 @@ const InfoHome = () => {
 
   const logout = () => {
     localStorage.removeItem('user')
+    localStorage.removeItem('chartPizzas')
     navigate('/')
 
   }
@@ -49,16 +51,16 @@ const InfoHome = () => {
           {infoUser.map((element, index) => (
             <header className='infoHome__user' key={index}>
               <div>
-                <NavLink className='navlink' to='/infoHome/details'>
+                <NavLink className='navlinks' to='/infoHome/details'>
                   <span className="material-symbols-outlined">
                     house
                   </span> Home</NavLink>
-                <p>¡Qué bueno verte <strong>{element.username.toUpperCase()}</strong>!</p>
+                <p>¡Qué bueno verte <strong>{element.name.toUpperCase()}</strong>!</p>
               </div>
               <div className='infoHome__user__search'>
                 <section className='search'>
-                  <NavLink className='navlink' to='searchPizza'><img src={search} alt="buscar" /> Buscar Pizza</NavLink>
-                  <NavLink to='shopping' className='navlink'><span className="material-symbols-outlined">
+                  <NavLink className='navlinks' to='searchPizza'><img src={search} alt="buscar" /> Buscar Pizza</NavLink>
+                  <NavLink to='/shopping' className='navlinks'><span className="material-symbols-outlined">
                     shopping_cart
                   </span></NavLink>
                   <small onClick={logout}><span className="material-symbols-outlined">
@@ -69,7 +71,7 @@ const InfoHome = () => {
 
                 </section>
                 <figure>
-                  <img src={element.img} alt="userPhoto" />
+                  <img src={element.url} alt="userPhoto" />
                 </figure>
 
 
@@ -101,10 +103,10 @@ const InfoHome = () => {
             <header className='infoHome__user' key={index}>
               <div>
                 <h3>Home</h3>
-                <p>¡Qué bueno verte <strong>{element.username.toUpperCase()}</strong>!</p>
+                <p>¡Qué bueno verte <strong>{element.name.toUpperCase()}</strong>!</p>
               </div>
               <figure>
-                <img src={element.img} alt="userPhoto" />
+                <img src={element.url} alt="userPhoto" />
               </figure>
             </header>
 
@@ -117,7 +119,7 @@ const InfoHome = () => {
             <NavLink to='/infoHome/details' className='infoHome__footer__buttons' ><span className="material-symbols-outlined">
               menu_book
             </span> Home</NavLink>
-            <NavLink to='chart' className='navlink'><span className="material-symbols-outlined">
+            <NavLink to='/shopping' className='navlinks'><span className="material-symbols-outlined">
               shopping_cart
             </span></NavLink>
             <NavLink to='searchPizza' className='infoHome__footer__buttons'><span className="material-symbols-outlined">
