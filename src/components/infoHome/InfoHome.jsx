@@ -24,7 +24,7 @@ const InfoHome = () => {
   useEffect(() => {
     const info = JSON.parse(localStorage.getItem('user')) || []
     setInfoUser(info)
-   
+
 
     getPizzas()
       .then((response) => {
@@ -36,6 +36,7 @@ const InfoHome = () => {
 
   const logout = () => {
     localStorage.removeItem('user')
+    localStorage.removeItem('chartPizzas')
     navigate('/')
 
   }
@@ -59,7 +60,7 @@ const InfoHome = () => {
               <div className='infoHome__user__search'>
                 <section className='search'>
                   <NavLink className='navlinks' to='searchPizza'><img src={search} alt="buscar" /> Buscar Pizza</NavLink>
-                  <NavLink to='/chart' className='navlinks'><span className="material-symbols-outlined">
+                  <NavLink to='/shopping' className='navlinks'><span className="material-symbols-outlined">
                     shopping_cart
                   </span></NavLink>
                   <small onClick={logout}><span className="material-symbols-outlined">
@@ -118,7 +119,7 @@ const InfoHome = () => {
             <NavLink to='/infoHome/details' className='infoHome__footer__buttons' ><span className="material-symbols-outlined">
               menu_book
             </span> Home</NavLink>
-            <NavLink to='/chart' className='navlinks'><span className="material-symbols-outlined">
+            <NavLink to='/shopping' className='navlinks'><span className="material-symbols-outlined">
               shopping_cart
             </span></NavLink>
             <NavLink to='searchPizza' className='infoHome__footer__buttons'><span className="material-symbols-outlined">

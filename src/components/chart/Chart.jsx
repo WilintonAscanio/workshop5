@@ -5,12 +5,12 @@ import './chart.scss';
 
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
-import { element } from 'prop-types';
 
 
 const Chart = () => {
   const navigate = useNavigate();
   const [dataPizza, setDataPizza] = useState([])
+  const [quantity, setQuantity] = useState(0)
 
   const {
     register,
@@ -21,6 +21,8 @@ const Chart = () => {
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('pizza')) || {}
     setDataPizza(data)
+    const quantity = Number(JSON.parse(localStorage.getItem('quantity'))) || ''
+    setQuantity(quantity)
 
   }, [])
 
@@ -57,8 +59,8 @@ const Chart = () => {
             <h3 className='product-content__title'>{element.name}</h3>
 
             <div className='product-content__details'>
-              <strong>x2</strong>
-              <strong>$178</strong>
+              <strong>x{quantity}</strong>
+              <strong>${element.price * quantity}</strong>
             </div>
           </div>
         </article>
@@ -67,7 +69,7 @@ const Chart = () => {
 
 
       <form onSubmit={handleSubmit(onSubmit)} className='form'>
-        <h1 lassName='form__title'>Información de pago</h1>
+        <h1 className='form__title'>Información de pago</h1>
 
         <div className='form-content'>
           <label className='input-container'>

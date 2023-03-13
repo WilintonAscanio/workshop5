@@ -1,0 +1,110 @@
+.shopping {
+    background-image: url(https://images.hola.com/imagenes/cocina/recetas/20220208204252/pizza-pepperoni-mozzarella/1-48-890/pepperoni-pizza-abob-t.jpg);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+
+    &__all {
+        overflow-y: scroll  ;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 10px;
+        padding: 10px;
+
+        & section {
+            border-radius: 8px;
+            display: flex;
+            height: 150px;
+            align-items: center;
+            padding: 5px;
+            gap: 10px;
+
+           
+            & figure {
+                border-radius: 8px;
+                height: 100%;
+                width: 20%;
+
+                & img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            & div {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 10px;
+                width: 80%;
+                background-color: rgb(207, 199, 199);
+                border-radius: 8px;
+                padding: 5px;
+
+               & small {
+                font-weight: bold;
+                font-size: 20px;
+               }
+               & p {
+                font-size: 18px;
+               }
+            }
+
+            & button {
+                height: 40px;
+                width: 120px;
+                border: none;
+                text-decoration: none;
+                border-radius: 8px;
+                cursor: pointer;
+
+
+                &:hover {
+                    background-color: black;
+                    color: white;
+                }
+            }
+        }
+    }
+
+}
+.text{
+    background-color: rebeccapurple;
+}
+@media (max-width:900px){
+    .shopping{
+        &__all{
+            height: 100%;
+            width: 100%;
+
+            & section {
+                height: 100%;
+
+                & figure{
+                    width: 40%;
+                }
+
+                & div{
+                    width: 60%;
+                    & small{
+                        font-size: 15px;
+                    }
+                    & p{
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

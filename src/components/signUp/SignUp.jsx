@@ -12,7 +12,7 @@ const SignUp = () => {
   const onSubmit = (data) => {
     createUser(data)
     localStorage.setItem('user', JSON.stringify(data))
-    navigate('/infoHome/details')
+    navigate('/')
 
   }
 
