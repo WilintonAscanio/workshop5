@@ -1,17 +1,26 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import './chart.scss';
 
+
 import { useForm } from 'react-hook-form';
 
+
 const Chart = () => {
+const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = () => {};
+
+  const onSubmit = () => {
+    navigate('/animation') 
+   };
+
+
 
   return (
     <section className='chart'>
@@ -78,7 +87,7 @@ const Chart = () => {
                 type='text'
                 {...register('creditCardNumber', {
                   required: true,
-                  pattern: /^[0-9]{15,16}|(([0-9]{4}\s){3}[0-9]{3,4})$/,
+                  pattern: /\d{4}\s\d{4}\s\d{4}\s\d{4}/,
                 })}
               />
             </label>
@@ -160,12 +169,7 @@ const Chart = () => {
           </div>
 
           <button className='form-btn' type='submit'>
-          <Link to='/Animation' >
-                  
-          Pagar ahora
-        </Link>
-            
-            
+            Pagar ahora
           </button>
         </form>
       </div>
