@@ -12,10 +12,10 @@ import Swal from 'sweetalert2'
 const Home = () => {
   const navigate = useNavigate()
   const [users, setUsers] = useState([])
+  const [auth, setAuth] = useState(false)
 
 
   const { register, handleSubmit, formState: { errors } } = useForm()
-
 
   useEffect(() => {
     getUsers()
@@ -28,11 +28,12 @@ const Home = () => {
 
 
   const onSubmit = (data) => {
-
+    console.log(data);
     const userLogged = users.filter(user => user.username === data.username & user.password === data.password);
-
-    if (userLogged.length) {
-      localStorage.setItem('user', JSON.stringify(userLogged))
+    if (userLogged) {
+      setAuth(true) 
+    }
+    if (auth) {
       navigate('/infoHome/details')
 
     }

@@ -20,7 +20,6 @@ const SearchPizzas = () => {
     const arrayFiltered = data.filter(pizza => pizza.name.toLowerCase().includes(target.value.toLowerCase()))
     setPizzas(arrayFiltered)
 
-
   }
   useEffect(() => {
 

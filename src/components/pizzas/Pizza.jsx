@@ -8,6 +8,7 @@ const Pizza = () => {
   return (
     <div>Pizzas
       <NavLink to='/infoHome/infoPizza'> Info de la pizza</NavLink>
+      <p>Hola</p>
     </div>
 
 
