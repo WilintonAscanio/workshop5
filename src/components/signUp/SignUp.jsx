@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 import { createUser } from '../../services/createUser'
 import './signUp.scss'
 
