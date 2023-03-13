@@ -12,6 +12,10 @@ const SignUp = () => {
   const onSubmit = (data) => {
     createUser(data)
     localStorage.setItem('user', JSON.stringify(data))
+    Swal.fire({
+      icon:'success',
+      text :'Registro exitoso'
+    })
     navigate('/')
 
   }
