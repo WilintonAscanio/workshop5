@@ -33,25 +33,32 @@ const InfoPizza = () => {
               width={"100%"}
               infiniteLoop={true}
               key={index}>
-        <NavLink className='infooPizza__div__navclass' to='/infoHome'>
+     <figure className='infooPizza__div__figura' style={{
+                backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${element.img})`
+              }}>
+      <NavLink className='infooPizza__div__navclass' to='/infoHome'>
             <span class="material-symbols-outlined">
 arrow_back_ios
 </span>Todas las pizzas
 </NavLink>
-              <figure className='infooPizza__div__figura' style={{
-                backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${element.img})`
-              }}>
-
               </figure>
               <figure style={{
                 backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${element.img2})`
               }}>
-
+      <NavLink className='infooPizza__div__navclass' to='/infoHome'>
+            <span class="material-symbols-outlined">
+arrow_back_ios
+</span>Todas las pizzas
+</NavLink>
               </figure>
               <figure style={{
                 backgroundImage: `linear-gradient(0deg, rgba(0,0,0,1)2%, rgba(32,32,32,0) 38%), url(${element.img3})`
 
-              }}>
+              }}>      <NavLink className='infooPizza__div__navclass' to='/infoHome'>
+              <span class="material-symbols-outlined">
+  arrow_back_ios
+  </span>Todas las pizzas
+  </NavLink>
               </figure>
 
             </Carousel>
