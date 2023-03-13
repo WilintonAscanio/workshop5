@@ -19,10 +19,6 @@ const Router = () => {
         <Route path='signUp' element={<SignUp />} />
         <Route path='infoHome' element={<InfoHome />}>
 
-          <Route path='chart' element={<Chart />} />
-
-
-
           <Route path="details" element={<Details />} />
 
           <Route path='searchPizza' element={<SearchPizzas />} />
@@ -30,6 +26,7 @@ const Router = () => {
 
 
         </Route>
+        <Route path='chart' element={<Chart />} />
 
         <Route path='infoPizza' element={<InfoPizza />} >
           <Route path=':pizzas' element={<Pizza />} />

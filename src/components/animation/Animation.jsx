@@ -22,9 +22,8 @@ const Animation = () => {
           </p>
         </div>
 
-        <button className="checkout-details__btn" type="submit">
-          <Link to="/">Aceptar</Link>
-        </button>
+
+        <Link to="/infoHome/details" className="checkout-details__btn">Aceptar</Link>
       </div>
     </section>
   );

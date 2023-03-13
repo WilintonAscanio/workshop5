@@ -17,6 +17,11 @@ const InfoPizza = () => {
 
   }, [])
 
+  const pizzaSelect = () => {
+    console.log(data);
+    localStorage.setItem('pizza', JSON.stringify(data))
+  }
+
   return (
 
     <>
@@ -73,7 +78,7 @@ const InfoPizza = () => {
             <span className="material-symbols-outlined">shopping_cart</span>
 
             <button>
-              <NavLink to="/chart" className='navlink'> Pagar</NavLink>
+              <NavLink to="/chart" className='navlink' onClick={pizzaSelect()}> Pagar</NavLink>
             </button>
           </footer>
         </article>

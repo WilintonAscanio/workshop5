@@ -37,6 +37,9 @@
       }
   
       &__btn {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
         width: 200px;
         margin: auto;
         border: none;
@@ -56,4 +59,5 @@
       }
     }
   }
+ 
   

@@ -47,11 +47,10 @@ const InfoHome = () => {
         data
       }}>
         <article className='infoHome'>
-           {console.log(infoUser)}
           {infoUser.map((element, index) => (
             <header className='infoHome__user' key={index}>
               <div>
-                <NavLink className='navlink' to='/infoHome/details'>
+                <NavLink className='navlinks' to='/infoHome/details'>
                   <span className="material-symbols-outlined">
                     house
                   </span> Home</NavLink>
@@ -59,8 +58,8 @@ const InfoHome = () => {
               </div>
               <div className='infoHome__user__search'>
                 <section className='search'>
-                  <NavLink className='navlink' to='searchPizza'><img src={search} alt="buscar" /> Buscar Pizza</NavLink>
-                  <NavLink to='chart' className='navlink'><span className="material-symbols-outlined">
+                  <NavLink className='navlinks' to='searchPizza'><img src={search} alt="buscar" /> Buscar Pizza</NavLink>
+                  <NavLink to='/chart' className='navlinks'><span className="material-symbols-outlined">
                     shopping_cart
                   </span></NavLink>
                   <small onClick={logout}><span className="material-symbols-outlined">
@@ -119,7 +118,7 @@ const InfoHome = () => {
             <NavLink to='/infoHome/details' className='infoHome__footer__buttons' ><span className="material-symbols-outlined">
               menu_book
             </span> Home</NavLink>
-            <NavLink to='chart' className='navlink'><span className="material-symbols-outlined">
+            <NavLink to='/chart' className='navlinks'><span className="material-symbols-outlined">
               shopping_cart
             </span></NavLink>
             <NavLink to='searchPizza' className='infoHome__footer__buttons'><span className="material-symbols-outlined">
