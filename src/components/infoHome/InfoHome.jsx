@@ -24,6 +24,7 @@ const InfoHome = () => {
   useEffect(() => {
     const info = JSON.parse(localStorage.getItem('user')) || []
     setInfoUser(info)
+   
 
     getPizzas()
       .then((response) => {
@@ -46,6 +47,7 @@ const InfoHome = () => {
         data
       }}>
         <article className='infoHome'>
+           {console.log(infoUser)}
           {infoUser.map((element, index) => (
             <header className='infoHome__user' key={index}>
               <div>
@@ -53,12 +55,12 @@ const InfoHome = () => {
                   <span className="material-symbols-outlined">
                     house
                   </span> Home</NavLink>
-                <p>¡Qué bueno verte <strong>{element.username.toUpperCase()}</strong>!</p>
+                <p>¡Qué bueno verte <strong>{element.name.toUpperCase()}</strong>!</p>
               </div>
               <div className='infoHome__user__search'>
                 <section className='search'>
                   <NavLink className='navlink' to='searchPizza'><img src={search} alt="buscar" /> Buscar Pizza</NavLink>
-                  <NavLink to='shopping' className='navlink'><span className="material-symbols-outlined">
+                  <NavLink to='chart' className='navlink'><span className="material-symbols-outlined">
                     shopping_cart
                   </span></NavLink>
                   <small onClick={logout}><span className="material-symbols-outlined">
@@ -69,7 +71,7 @@ const InfoHome = () => {
 
                 </section>
                 <figure>
-                  <img src={element.img} alt="userPhoto" />
+                  <img src={element.url} alt="userPhoto" />
                 </figure>
 
 
@@ -101,10 +103,10 @@ const InfoHome = () => {
             <header className='infoHome__user' key={index}>
               <div>
                 <h3>Home</h3>
-                <p>¡Qué bueno verte <strong>{element.username.toUpperCase()}</strong>!</p>
+                <p>¡Qué bueno verte <strong>{element.name.toUpperCase()}</strong>!</p>
               </div>
               <figure>
-                <img src={element.img} alt="userPhoto" />
+                <img src={element.url} alt="userPhoto" />
               </figure>
             </header>
 
